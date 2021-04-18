@@ -13,5 +13,3 @@ end
 
 
 let g:remote_copy_loaded = 1
-
-vmap <C-c> y:call remote_copy#copy2clipboard(getreg('"'))<cr>
