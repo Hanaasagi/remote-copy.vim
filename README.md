@@ -8,6 +8,7 @@ Unlike other OSC52 Vim scripts (e.g. [code snippet in chromium hterm][g]), it so
 - Vim 7.3 or higher.
 - Python3+.
 - Terminal that supported OSC52 escape sequences.
+- Tmux 3.3 and above: Add `set -g allow-passthrough on` in tmux config.
 
 
 ## Installation
