@@ -5,7 +5,7 @@ Unlike other OSC52 Vim scripts (e.g. [code snippet in chromium hterm][g]), it so
 
 ## Requirements
 
-- Vim 7.3 or higher.
+- Vim 7.3 or higher, Neovim.
 - Python3+.
 - Terminal that supported OSC52 escape sequences.
 - Tmux 3.3 and above: Add `set -g allow-passthrough on` in tmux config.
@@ -35,7 +35,21 @@ git clone --depth=1 https://github.com/Hanaasagi/remote-copy.vim ~/.vim/bundle/r
 ### [vim-plug][vp]
 
 ```vim
-Plugin 'Hanaasagi/remote-copy.vim'
+Plug 'Hanaasagi/remote-copy.vim'
+```
+
+### [Lazy.nvim](nl)
+
+```Lua
+{
+    "Hanaasagi/remote-copy.vim",
+    config = function()
+        vim.keymap.set("v", "<C-c>",
+                       [[y:call remote_copy#copy2clipboard(getreg('"'))<CR>]],
+                       { silent = true , noremap=true, desc="copy text"})
+    end,
+},
+
 ```
 
 ## License
@@ -49,3 +63,4 @@ All rights reserved.
 [v]: https://github.com/gmarik/vundle
 [p]: https://github.com/tpope/vim-pathogen
 [vp]: https://github.com/junegunn/vim-plug
+[nl]: https://github.com/folke/lazy.nvim
